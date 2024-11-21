@@ -1,0 +1,125 @@
+.newUserContainer {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgb(221, 221, 221);
+    border-left: 1px solid rgba(0, 0, 0, 0.158);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.newUserContainer h1 {
+    color: rgba(0, 0, 0, 0.733);
+    font: 300 2rem "Roboto";
+    text-align: center;
+}
+
+.createUserForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding: 3vmax;
+    justify-content: space-evenly;
+    height: 70%;
+    width: 40vh;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
+}
+
+.createUserForm>div {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.createUserForm>div>input {
+    padding: 1vmax 1vmax;
+    padding-right: 1vmax;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    border-radius: 4px;
+    font: 300 0.9vmax cursive;
+    outline: none;
+}
+
+.createUserForm > div > select {
+    padding: 1vmax;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    border-radius: 4px;
+    font: 300 1vmax cursive;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: #fff;
+}
+
+.createUserForm > div > select:focus {
+    border-color: #0066cc;
+    box-shadow: 0 0 5px rgba(0, 102, 204, 0.5);
+}
+
+.createUserForm > div > select option {
+    font: 300 1vmax cursive;
+    padding: 0.5vmax;
+}
+
+#createUserBtn {
+    border: none;
+    font: 300 0.9vmax "Roboto";
+    width: 100%;
+    padding: 0.8vmax;
+    cursor: pointer;
+    transition: all 0.5s;
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(21, 10, 10, 0.219);
+}
+
+#createUserBtn:hover {
+    background-color: black;
+    color: white;
+}
+
+@media screen and (max-width: 1150px) {
+    .createUserForm>div>input {
+        height: 6vmax;
+    }
+    .createUserForm > div > input {
+        height: 6vmax;
+        font-size: 1.5vmax;
+    }
+
+    .createUserForm > div > select {
+        font-size: 1.5vmax;
+        padding: 1.5vmax;
+    }
+
+    #createUserBtn {
+        font-size: 1.5vmax; /* Increased font size for button text */
+        padding: 1.5vmax; /* Adjusted padding for a balanced look */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .newUserContainer {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .createUserForm {
+        padding: 5vmax;
+    }
+
+    .createUserForm>div>input {
+        padding: 2.5vmax 1vmax;
+        font: 300 1.7vmax cursive;
+    }
+
+
+    #createUserBtn {
+        font: 300 1.9vmax "Roboto";
+        padding: 1.8vmax;
+    }
+}
