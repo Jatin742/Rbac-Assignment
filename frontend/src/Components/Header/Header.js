@@ -15,6 +15,7 @@ const Header = () => {
   }
   const handleLogout = () => {
     dispath(logout());
+    setMenu(false);
   }
   return (
     <Fragment>
@@ -24,16 +25,16 @@ const Header = () => {
           :
           <GiHamburgerMenu className='menu-svg' onClick={handleMenu}/>
         }
-        <Link className='logo' to="/">Events</Link>
+        <Link className='logo' to="/" onClick={()=> setMenu(false)}>Events</Link>
 
         <div className={`box1  ${menu ? "menu-active" : "menu-close"}`}>
           {isAuthenticated ?
             <>
               {user.role === "admin" && <>
-                <Link className='admin' to="/admin/all-users" >My Users</Link>
-                <Link className='admin' to="/admin/all-events" >My Events</Link>
+                <Link className='admin' to="/admin/all-users" onClick={()=> setMenu(false)}>My Users</Link>
+                <Link className='admin' to="/admin/all-events" onClick={()=> setMenu(false)}>My Events</Link>
               </>}
-              <Link className="profile" to="/user/events">My Profile</Link>
+              <Link className="profile" to="/user/events" onClick={()=> setMenu(false)}>My Profile</Link>
               <Link className='logout' onClick={handleLogout}>Logout</Link>
             </>
             :

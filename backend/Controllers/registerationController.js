@@ -30,8 +30,9 @@ exports.registerForEvent = catchAsyncErrors(async (req, res) => {
 
 exports.getUserEvents = catchAsyncErrors(async (req,res, next)=>{
     const registerations = await Registeration.find({ user: req.user._id }).populate("event");
-    const events = registerations.map(registeration => registeration.event);
-
+    const events = registerations
+    .map(registeration => registeration.event)
+    .filter(event => event !== null);
     res.status(200).json({
         success: true,
         events,
