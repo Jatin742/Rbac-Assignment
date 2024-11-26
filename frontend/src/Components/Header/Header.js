@@ -38,7 +38,7 @@ const Header = () => {
               <Link className='logout' onClick={handleLogout}>Logout</Link>
             </>
             :
-            <Link to="/login">Login</Link>}
+            <Link to="/login" onClick={()=> setMenu(false)}>Login</Link>}
         </div>
       </div>
       <div
